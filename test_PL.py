@@ -37,9 +37,11 @@ gd = GradientDescentOptimizer(0.4) # AdagradOptimizer(0.4)
 var = var_init
 var_gd = [var]
 
-for it in range(100):
+for it in range(50):
     var = gd.step(objective, var)
 
     if (it + 1) % 5 == 0:
         var_gd.append(var)
         print('Objective after step {:5d}: {: .7f} | Angles: {}'.format(it + 1, objective(var), var) )
+
+# Results are same over multiple runs
